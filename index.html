@@ -14,9 +14,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #121212, #1c1c1c);
-            background-size: 200% 200%;
-            animation: backgroundAnimation 5s ease infinite;
+            background: radial-gradient(circle, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
             color: #fff;
             margin: 0;
             padding: 0;
@@ -27,58 +25,65 @@
             text-align: center;
             flex-direction: column;
             overflow: hidden;
-            animation: fadeInPage 1.5s ease-out;
+            animation: backgroundAnimation 6s ease infinite, fadeInPage 1s ease-out;
         }
+
         @keyframes backgroundAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 40px;
-            box-sizing: border-box;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideUp 1s ease-out;
-        }
+
         @keyframes fadeInPage {
             0% { opacity: 0; transform: translateY(50px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            animation: slideUp 1s ease-out;
+        }
+
         @keyframes slideUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+
         h1 {
-            font-size: 25px;
+            font-size: 32px;
             margin-bottom: 30px;
             color: #f44336;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s ease, color 0.3s ease;
             font-family: 'Poppins', sans-serif;
         }
+
         h1:hover {
             transform: translateY(-10px);
             color: #ff5722;
         }
+
         .description {
             font-size: 18px;
-            color: #fff;
             margin-bottom: 30px;
             font-family: 'Poppins', sans-serif;
+            color: #ddd;
         }
+
         .download-button {
-            background-color: #f44336;
+            background: linear-gradient(135deg, #f44336, #ff5722);
             color: #fff;
             padding: 18px 40px;
-            font-size: 18px;
+            font-size: 20px;
             text-decoration: none;
             border-radius: 50px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -89,16 +94,20 @@
             cursor: pointer;
             position: relative;
             transition: all 0.3s ease;
+            overflow: hidden;
         }
+
         .download-button:hover {
             background-color: #d32f2f;
             transform: scale(1.05);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
+
         .download-button:active {
             transform: scale(1) rotate(2deg);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
+
         .download-button:before {
             content: '⏳';
             position: absolute;
@@ -108,27 +117,31 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .download-button:hover:before {
             opacity: 1;
             animation: spin 1.5s infinite linear;
         }
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
         @media screen and (max-width: 600px) {
             h1 {
-                font-size: 16px;
+                font-size: 22px;
             }
 
             .download-button {
-                font-size: 16px;
+                font-size: 18px;
                 padding: 14px 30px;
             }
         }
+
         @media screen and (min-width: 768px) {
             h1 {
-                font-size: 25px;
+                font-size: 32px;
             }
         }
     </style>
